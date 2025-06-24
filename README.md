@@ -92,7 +92,7 @@ grant all on sae202Base.* TO 'sae202User'@'localhost';
 
 Et normalement tout est bon dans votre admisql : MMI.mmi-troyes.fr/adminsql
 
-Normalement dans le dossier data dans sae202 il y a un fichier sae202Base.sql. Pour importer toutes les tables nécessaires vous pouvez soit mettre le fichier dans importer de adminsql soit vous faites la commande suivante : mysqldump sae202Base < sae202Base.sql
+Normalement dans le dossier data dans sae202 il y a un fichier sae202Base.sql. Pour importer toutes les tables nécessaires vous pouvez soit mettre le fichier dans importer de adminsql soit vous faites la commande suivante : ``` mysqldump sae202Base < sae202Base.sql```
 
 Et les bases de données sont prêtes.
 

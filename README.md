@@ -8,6 +8,7 @@ MMI = Votre mmi24xxx personnel
 
 Aller dans /etc/apache2/sites-available sur votre VPS, ensuite tapez la commande (sudo) nano sae202.conf et collez tout ça :
 
+<details>
 <VirtualHost *:443>
 
   ServerName MMI.sae202.ovh
@@ -38,6 +39,7 @@ Aller dans /etc/apache2/sites-available sur votre VPS, ensuite tapez la commande
                 </RequireAny>
         </Directory>
 </VirtualHost>
+</details>
 
 Ensuite faites CTRL+S puis CTRL+X (CMD si vous êtes sur MAC).
 

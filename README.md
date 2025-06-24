@@ -8,12 +8,11 @@ MMI = Votre mmi24xxx personnel
 
 Aller dans /etc/apache2/sites-available sur votre VPS, ensuite tapez la commande (sudo) nano sae202.conf et collez tout ça :
 
-<details>
+```apache
 <VirtualHost *:443>
 
   ServerName MMI.sae202.ovh
   ServerAdmin MMI1@mmi-troyes.fr
-
   DocumentRoot /var/www/sae202
   DirectoryIndex index.php
 
@@ -27,7 +26,6 @@ Aller dans /etc/apache2/sites-available sur votre VPS, ensuite tapez la commande
                 RewriteRule ^([^/]+) index.php/$1
         </Directory>
 
-
         <Directory /var/www/sae202/admin>
                 AuthType Basic
                 AuthBasicProvider file
@@ -38,8 +36,10 @@ Aller dans /etc/apache2/sites-available sur votre VPS, ensuite tapez la commande
                 Require valid-user
                 </RequireAny>
         </Directory>
+
 </VirtualHost>
-</details>
+```
+
 
 Ensuite faites CTRL+S puis CTRL+X (CMD si vous êtes sur MAC).
 
@@ -47,6 +47,7 @@ Ensuite faites CTRL+S puis CTRL+X (CMD si vous êtes sur MAC).
 
 Aller ensuite dans /etc/apache2/conf-available sur votre VPS, ensuite taper la commande suivante (sudo) nano agence.conf et coller tout ça :
 
+```apache
 Alias /agence /var/www/agence
 
 <Directory /var/www/agence>
@@ -66,6 +67,7 @@ DirectoryIndex admin.php
 Options -Indexes
 AllowOverride All
 </Directory>
+```
 
 Ensuite faites CTRL+S puis CTRL+X (CMD si vous êtes sur MAC).
 
@@ -82,10 +84,11 @@ Maintenant avec l'URL suivant vous pouvez voir le site hébergé sur vos VPS : h
 ## Les bases de données
 
 Il faut d'abord créer une database pour nos tables du site on l'appellera sae202Base voici les commandes pour créer cette database ainsi que l'utilisateur qui va avec :
-
+```sql
 create database sae202Base;
 create user 'sae202user'@'localhost' identified by 'password';
 grant all on sae202Base.* TO 'sae202User'@'localhost';
+```
 
 Et normalement tout est bon dans votre admisql : MMI.mmi-troyes.fr/adminsql
 
